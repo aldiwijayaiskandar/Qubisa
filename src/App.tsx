@@ -22,6 +22,7 @@ import {Colors} from './theme/colors';
 import Home from './screens/home/home';
 import Login from './screens/login/login';
 import SignUp from './screens/signup/signup';
+import BottomTab from './BottomTab';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,24 +36,10 @@ const App = () => {
             <Stack.Navigator>
               <Stack.Screen
                 name="Home"
-                component={Home}
-                options={({route, navigation}) => ({
-                  title: '',
-                  headerRight: () => (
-                    <TouchableOpacity
-                      onPress={() => {
-                        navigation.navigate('Login');
-                      }}>
-                      <Text
-                        style={{
-                          fontFamily: 'Roboto',
-                          fontSize: 13,
-                        }}>
-                        Masuk
-                      </Text>
-                    </TouchableOpacity>
-                  ),
-                })}
+                component={BottomTab}
+                options={{
+                  headerShown: false,
+                }}
               />
               <Stack.Screen
                 name="Login"
