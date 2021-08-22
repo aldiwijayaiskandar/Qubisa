@@ -11,6 +11,7 @@ import {Colors} from '../../theme/colors';
 import {getArticle, getPopularArticleTopic} from '../../services/apiService';
 import {Article, Topic} from '../../models';
 import TopicCard from '../../components/topicCard';
+import ArticleCard from '../../components/articleCard';
 
 const ArticleSection = () => {
   const [isTopicLoading, setIsTopicLoading] = useState(false);
@@ -68,6 +69,16 @@ const ArticleSection = () => {
           }}
         />
       )}
+
+      {isArticleLoading ? (
+        <View style={styles.articleLoading}></View>
+      ) : (
+        <View style={styles.articleContentWrapper}>
+          {articles.map((item: Article, index: number) => {
+            return <ArticleCard article={item} key={index} />;
+          })}
+        </View>
+      )}
     </View>
   );
 };
@@ -92,11 +103,23 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   topicLoading: {
-    height: 50,
+    height: 30,
     backgroundColor: Colors.grey,
     borderRadius: 4,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  articleLoading: {
+    marginTop: 20,
+    height: 150,
+    backgroundColor: Colors.grey,
+    borderRadius: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  articleContentWrapper: {
+    marginTop: 20,
+    padding: 2.5,
   },
 });
 
