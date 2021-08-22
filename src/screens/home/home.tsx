@@ -5,12 +5,16 @@ import SliderSection from './slider';
 import MicrolearningSection from './microlearning';
 import ArticleSection from './article';
 
-const HomeScreen = () => {
+interface IHomeScreen {
+  navigation: any;
+}
+
+const HomeScreen = ({navigation}: IHomeScreen) => {
   return (
     <ScrollView>
       <SliderSection />
       <MicrolearningSection />
-      <ArticleSection />
+      <ArticleSection navigation={navigation} />
     </ScrollView>
   );
 };

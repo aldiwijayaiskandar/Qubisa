@@ -1,16 +1,25 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {selectTopic} from '../@redux/app/app.reducer';
 import {Topic} from '../models';
 
 interface ITopicCard {
   topic: Topic;
+  navigation: any;
 }
 
-const TopicCard = ({topic}: ITopicCard) => {
+const TopicCard = ({topic, navigation}: ITopicCard) => {
+  const dispatch = useDispatch();
   return (
-    <View style={styles.topicWrapper}>
+    <TouchableOpacity
+      style={styles.topicWrapper}
+      onPress={() => {
+        dispatch(selectTopic(topic.name));
+        navigation.navigate('Home', {screen: 'Home'});
+      }}>
       <Text>{topic.name}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

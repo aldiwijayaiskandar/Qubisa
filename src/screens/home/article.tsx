@@ -13,7 +13,11 @@ import {Article, Topic} from '../../models';
 import TopicCard from '../../components/topicCard';
 import ArticleCard from '../../components/articleCard';
 
-const ArticleSection = () => {
+interface IArticleSection {
+  navigation: any;
+}
+
+const ArticleSection = ({navigation}: IArticleSection) => {
   const [isTopicLoading, setIsTopicLoading] = useState(false);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [isArticleLoading, setIsArticleLoading] = useState(false);
@@ -65,7 +69,9 @@ const ArticleSection = () => {
           data={topics}
           keyExtractor={({item, index}) => index}
           renderItem={({item, index}: {item: Topic; index: number}) => {
-            return <TopicCard topic={item} key={index} />;
+            return (
+              <TopicCard topic={item} navigation={navigation} key={index} />
+            );
           }}
         />
       )}
