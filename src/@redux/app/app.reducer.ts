@@ -13,7 +13,6 @@ const appSlice = createSlice({
   initialState: appState,
   reducers: {
     selectTopic: (state: IAppState, action: PayloadAction<string>) => {
-      console.log(action.payload);
       state.selectedTopic = action.payload;
     },
   },
