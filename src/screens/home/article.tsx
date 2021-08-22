@@ -78,6 +78,7 @@ const styles = StyleSheet.create({
   },
   titleWrapper: {
     alignItems: 'center',
+    marginBottom: 15,
   },
   title: {
     fontSize: 22,

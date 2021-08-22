@@ -16,10 +16,15 @@ const TopicCard = ({topic}: ITopicCard) => {
 
 const styles = StyleSheet.create({
   topicWrapper: {
+    height: 30,
     paddingVertical: 2,
     borderRadius: 2,
     borderColor: '#DCDCDC',
     borderWidth: 1,
+    marginHorizontal: 2.5,
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    alignContent: 'center',
   },
 });
 
