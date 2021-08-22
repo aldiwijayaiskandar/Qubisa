@@ -7,21 +7,21 @@ interface IInput {
   label: string;
   value: string;
   error: any;
-  errorMessage: string;
   touched: any;
   handleChange: Function;
   handleBlur: Function;
   isPassword?: boolean;
+  placeholder: string;
 }
 
 const Input = ({
   label,
   value,
   error,
-  errorMessage,
   touched,
   handleBlur,
   handleChange,
+  placeholder,
   isPassword = false,
 }: IInput) => {
   const [hidePassword, setHidePassword] = useState(isPassword);
@@ -38,7 +38,7 @@ const Input = ({
         <TextInput
           style={styles.textInput}
           value={value}
-          placeholder={'masukan email/username kamu'}
+          placeholder={placeholder}
           placeholderTextColor={'#A0A0A0CC'}
           onChangeText={value => handleChange(value)}
           onBlur={value => handleBlur(value)}
@@ -52,8 +52,8 @@ const Input = ({
           </TouchableOpacity>
         )}
       </View>
-      {error && touched && (
-        <Text style={styles.errorLabel}>{errorMessage}</Text>
+      {error != null && touched && (
+        <Text style={styles.errorLabel}>{error}</Text>
       )}
     </>
   );

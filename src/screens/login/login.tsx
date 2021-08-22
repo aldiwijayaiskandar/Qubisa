@@ -33,9 +33,21 @@ const Login = ({navigation}: ILogin) => {
         validationSchema={yup.object().shape({
           email: yup
             .string()
-            .email('Silahkan masukan Email dengan format yang sesuai')
-            .required('Alamat Email Dibutuhkan'),
-          password: yup.string().required('Password Dibutuhkan'),
+            .email('Format Email tidak sesuai')
+            .required('Email Dibutuhkan'),
+          password: yup
+            .string()
+            .required('Password Dibutuhkan')
+            .min(8, 'Password minimal terdiri dari 8 karakter')
+            .matches(
+              /\w*[A-Z]\w*/,
+              'Password minimal terdiri dari 1 huruf kapital',
+            )
+            .matches(/\d/, 'Password minimal terdiri dari 1 angka')
+            .matches(
+              /[!@#$%^&*()\-_"=+{}; :,<.>]/,
+              'Password minimal terdiri dari 1 karakter spesial',
+            ),
         })}>
         {({
           values,
@@ -50,9 +62,9 @@ const Login = ({navigation}: ILogin) => {
           <>
             <Input
               label="Email/username"
+              placeholder="masukan email/username kamu"
               error={errors.email}
               touched={touched.email}
-              errorMessage={'Mohon masukan alamat email yang tepat'}
               value={values.email}
               handleChange={handleChange('email')}
               handleBlur={handleBlur('email')}
@@ -60,9 +72,9 @@ const Login = ({navigation}: ILogin) => {
             <View style={{marginTop: 12.5}} />
             <Input
               label="Kata Sandi"
+              placeholder="masukan kata sandi kamu"
               error={errors.password}
               touched={touched.password}
-              errorMessage={'Password tidak valid'}
               value={values.password}
               handleChange={handleChange('password')}
               handleBlur={handleBlur('password')}
