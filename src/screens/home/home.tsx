@@ -11,7 +11,7 @@ interface IHomeScreen {
 
 const HomeScreen = ({navigation}: IHomeScreen) => {
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor: Colors.bg}}>
       <SliderSection />
       <MicrolearningSection />
       <ArticleSection navigation={navigation} />

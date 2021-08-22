@@ -30,7 +30,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <SafeAreaView style={{flex: 1, backgroundColor: Colors.bg}}>
+        <SafeAreaView style={{flex: 1, backgroundColor: '#FFFFFF'}}>
           <StatusBar barStyle={'dark-content'} backgroundColor="white" />
           <NavigationContainer>
             <Stack.Navigator>

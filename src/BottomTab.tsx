@@ -15,6 +15,7 @@ const BottomTab = () => {
         name="Home"
         component={HomeScreen}
         options={({route, navigation}) => ({
+          headerTitle: '',
           tabBarIcon: ({focused}) => {
             return (
               <>
