@@ -10,6 +10,7 @@ import {
 import {Colors} from '../../theme/colors';
 import {getArticle, getPopularArticleTopic} from '../../services/apiService';
 import {Article, Topic} from '../../models';
+import TopicCard from '../../components/topicCard';
 
 const ArticleSection = () => {
   const [isTopicLoading, setIsTopicLoading] = useState(false);
@@ -63,11 +64,7 @@ const ArticleSection = () => {
           data={topics}
           keyExtractor={({item, index}) => index}
           renderItem={({item, index}: {item: Topic; index: number}) => {
-            return (
-              <View key={index}>
-                <Text>{item.name}</Text>
-              </View>
-            );
+            return <TopicCard topic={item} key={index} />;
           }}
         />
       )}
