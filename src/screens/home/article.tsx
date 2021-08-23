@@ -67,10 +67,10 @@ const ArticleSection = ({navigation}: IArticleSection) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           data={topics}
-          keyExtractor={({item, index}) => index}
-          renderItem={({item, index}: {item: Topic; index: number}) => {
+          keyExtractor={(item: Topic) => item.id.toString()}
+          renderItem={({item}: {item: Topic}) => {
             return (
-              <TopicCard topic={item} navigation={navigation} key={index} />
+              <TopicCard topic={item} navigation={navigation} key={item.id} />
             );
           }}
         />

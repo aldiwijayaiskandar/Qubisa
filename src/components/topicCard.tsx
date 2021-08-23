@@ -16,7 +16,7 @@ const TopicCard = ({topic, navigation}: ITopicCard) => {
       style={styles.topicWrapper}
       onPress={() => {
         dispatch(selectTopic(topic.name));
-        navigation.navigate('Home', {screen: 'Search'});
+        navigation.navigate('App', {screen: 'Search'});
       }}>
       <Text>{topic.name}</Text>
     </TouchableOpacity>

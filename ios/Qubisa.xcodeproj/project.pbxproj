@@ -15,6 +15,7 @@
 		96BDD8E09FC14288B0525333 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCE34C895D0747C5981FFA0E /* Roboto-Regular.ttf */; };
 		A27790182F45162149DA088B /* libPods-Qubisa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9192874345DF2D6E7F5B74D6 /* libPods-Qubisa.a */; };
 		C0B804582763E4B065B2393B /* libPods-Qubisa-QubisaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF28CF983E85692EF971C96 /* libPods-Qubisa-QubisaTests.a */; };
+		9D65FE997D4F4A068A601892 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9D07BF30DB42BE99449589 /* Nunito-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EFAB9947D77C7FAB19E55A90 /* Pods-Qubisa-QubisaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qubisa-QubisaTests.debug.xcconfig"; path = "Target Support Files/Pods-Qubisa-QubisaTests/Pods-Qubisa-QubisaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FCE34C895D0747C5981FFA0E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		5E9D07BF30DB42BE99449589 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; name = "Nunito-Regular.ttf"; path = "../assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE34C895D0747C5981FFA0E /* Roboto-Regular.ttf */,
+				5E9D07BF30DB42BE99449589 /* Nunito-Regular.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -258,6 +261,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				96BDD8E09FC14288B0525333 /* Roboto-Regular.ttf in Resources */,
+				9D65FE997D4F4A068A601892 /* Nunito-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

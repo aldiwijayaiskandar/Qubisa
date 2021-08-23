@@ -42,10 +42,10 @@ const MicrolearningSection = () => {
       ) : (
         <FlatList
           horizontal
-          keyExtractor={({item, index}) => index}
+          keyExtractor={(item: Content) => item.id.toString()}
           data={microlearnings}
-          renderItem={({item, index}) => {
-            return <MicrolearningCard microlearning={item} />;
+          renderItem={({item}: {item: Content}) => {
+            return <MicrolearningCard microlearning={item} key={item.id} />;
           }}
         />
       )}

@@ -55,15 +55,6 @@ const SliderSection = () => {
     );
   };
 
-  const _renderPageIndicator = (item: Slide, index: number) => {
-    return (
-      <View
-        style={index === slideIndex ? styles.activeIndicator : styles.indicator}
-        key={index}
-      />
-    );
-  };
-
   return (
     <View style={styles.sliderWrapper}>
       {isLoading ? (
@@ -81,7 +72,16 @@ const SliderSection = () => {
             {slides.map((item, index) => _renderItem(item, index))}
           </ScrollView>
           <View style={styles.indicatorWrapper}>
-            {slides.map((item, index) => _renderPageIndicator(item, index))}
+            {slides.map((item, index) => (
+              <View
+                style={
+                  index === slideIndex
+                    ? styles.activeIndicator
+                    : styles.indicator
+                }
+                key={index}
+              />
+            ))}
           </View>
         </>
       )}
